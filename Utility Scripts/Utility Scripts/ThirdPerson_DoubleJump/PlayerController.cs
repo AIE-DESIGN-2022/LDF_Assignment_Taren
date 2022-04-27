@@ -180,7 +180,7 @@ namespace Gamekit3D
         }
 
         // Called automatically by Unity once every Physics step.
-        void FixedUpdate()
+        void Update()
         {
             CacheAnimatorState();
 
@@ -311,19 +311,21 @@ namespace Gamekit3D
                 
                 // If Ellen is airborne, apply gravity.
                 m_VerticalSpeed -= gravity * Time.deltaTime;
-            }
 
-            if (canDoubleJump && !hasDoubleJumped && !m_IsGrounded && m_Input.JumpInput)
-            { 
-                if (m_Input.DoubleJump && !hasDoubleJumped)
+                if (canDoubleJump && !hasDoubleJumped)
                 {
-                    Debug.Log("double jump");
-                    
-                    m_VerticalSpeed = jumpSpeed;
-                    hasDoubleJumped = true;
-                    OnAnimatorMove();
+                    if (m_Input.DoubleJump)
+                    {
+                        Debug.Log("double jump");
+
+                        m_VerticalSpeed = jumpSpeed;
+                        hasDoubleJumped = true;
+                        OnAnimatorMove();
+                    }
                 }
             }
+
+            
         }
 
         // Called each physics step to set the rotation Ellen is aiming to have.
@@ -507,7 +509,7 @@ namespace Gamekit3D
         void OnAnimatorMove()
         {
             Vector3 movement;
-
+            
             // If Ellen is on the ground...
             if (m_IsGrounded)
             {
@@ -558,6 +560,7 @@ namespace Gamekit3D
 
             // Send whether or not Ellen is on the ground to the animator.
             m_Animator.SetBool(m_HashGrounded, m_IsGrounded);
+
         }
         
         // This is called by an animation event when Ellen swings her staff.
