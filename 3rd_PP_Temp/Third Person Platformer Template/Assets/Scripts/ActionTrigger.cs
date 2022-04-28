@@ -48,9 +48,8 @@ public class ActionTrigger : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("fsdfasdfg");
         if (onceOnly && ranOnce) return;
         if (other.gameObject.tag == "Player")
         {
@@ -59,9 +58,8 @@ public class ActionTrigger : MonoBehaviour
         }
     }
 
-    public void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        
         if (onceOnly && ranOnce) return;
         if (other.gameObject.tag == "Player")
         {
