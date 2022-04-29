@@ -13495,7 +13495,6 @@ GameObject:
   - component: {fileID: 227395169}
   - component: {fileID: 227395171}
   - component: {fileID: 227395170}
-  - component: {fileID: 227395172}
   m_Layer: 16
   m_Name: Power_Light
   m_TagString: Untagged
@@ -13598,22 +13597,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &227395172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227395168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76f0b48861cb2ec40901f353d5d4d4c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  light: {fileID: 227395171}
-  minIntensity: 3
-  maxIntensity: 10
-  smoothing: 5
 --- !u!1 &232452410
 GameObject:
   m_ObjectHideFlags: 0
